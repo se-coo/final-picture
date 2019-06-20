@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="png" sizes="16x16" href="favicon.ico">
+  <title> Picture</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+<style>
+* {
+  box-sizing: border-box;}
+  .menu{height: 60px; margin: auto;background:none;padding-top: 2%;}
+          
+          nav{padding-left:14%; height:60px; background: none;  position: fixed;}
+          nav ul{}
+          nav li{list-style-type: none; width:150px; height:60px; float:left; text-align: center; line-height: 10px; font-size: 10px; padding-left:10%;}
+          li a{text-decoration: none; transition: all 1s;}
+          li a:link, li a:hover, li a:active, li a:visited{text-decoration: none; color: black; display: block;}
+          li a:hover{background:black; color:white;}
+
+body {
+  margin: 0;}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column { position: absolute;
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+ margin: auto;
+}
+
+.column img {position: relative;
+  margin-top: 8px;
+  vertical-align: middle;
+  padding-left: 10%;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+     footer{border-top: 2px 100 dotted black ; font-size: 10px; color: black; text-align: center; line-height: 20px; margin-top: 20%; padding-top: 3%;position: absolute; margin-top:340%;padding-left: 40%;}
+
+</style>
+</head>
+
+
+<body>
+   <div class="menu">
+       <nav>
+          <ul>
+            <li><a href="https://se-coo.github.io/final-profile/" target=".pas">PROFILE</a></li>
+            <li><a href="https://se-coo.github.io/final-whywho/">WHY WHO</a></li>
+            <li><a href="https://se-coo.github.io/final-home/" target="_top"><img src="menu2.png" style="width: 20px;"></a></li>
+            <li><a href="https://se-coo.github.io/final-discography/">DISCOGRAPHY</a></li>
+            <li><a href="" target="_top">PICTURE</a></li>
+          </ul>
+        </nav>
+    </div>
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Image Grid</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="1.jpg" style="width:90%">
+    <img src="2.jpg" style="width:90%">
+    <img src="3.jpg" style="width:90%">
+    <img src="4.jpg" style="width:90%">
+    <img src="5.png" style="width:90%">
+    <img src="6.jpg" style="width:90%">
+    <img src="7.jpg" style="width:90%">
+  </div>
+  
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+ <footer>
+  <p>Posted by: Park sa rah</p>
+  <p>Contact information: <a href="mailto:secoo79@naver.com">secoo79@naver.com</a>.</p>
+</footer>
+
+</body>
+</html>
